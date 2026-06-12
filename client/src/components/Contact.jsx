@@ -22,7 +22,7 @@ export default function Contact() {
     }
     setStatus('loading');
     try {
-      const res = await fetch('/api/contact', {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/api/contact`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(form),
@@ -41,12 +41,12 @@ export default function Contact() {
 
   return (
     <section id="contact">
-      <div ref={labelRef} className={`section-label fade-in${labelVis ? ' vis' : ''}`}>// 04 — REACH OUT</div>
-      <div ref={titleRef} className={`section-title fade-in${titleVis ? ' vis' : ''}`}>CONTACT</div>
-      <div ref={lineRef} className={`section-line${lineVis ? ' run' : ''}`} />
+      <div ref={labelRef} className={`section - label fade - in${labelVis ? ' vis' : ''} `}>// 04 — REACH OUT</div>
+      <div ref={titleRef} className={`section - title fade - in${titleVis ? ' vis' : ''} `}>CONTACT</div>
+      <div ref={lineRef} className={`section - line${lineVis ? ' run' : ''} `} />
 
       <div className="contact-inner">
-        <div ref={leftRef} className={`fade-left${leftVis ? ' vis' : ''}`}>
+        <div ref={leftRef} className={`fade - left${leftVis ? ' vis' : ''} `}>
           <div className="contact-text">
             <p>Always open to interesting projects, collaborations, internship opportunities, or just a good tech conversation.</p>
             <p style={{ color: 'var(--green-dim)' }}>Based in Ahmedabad, India. Open to remote work worldwide.</p>
@@ -64,7 +64,7 @@ export default function Contact() {
           </div>
         </div>
 
-        <div ref={rightRef} className={`contact-form fade-right${rightVis ? ' vis' : ''}`}>
+        <div ref={rightRef} className={`contact - form fade - right${rightVis ? ' vis' : ''} `}>
           <div className="form-row">
             <div className="form-field">
               <label>Name</label>
