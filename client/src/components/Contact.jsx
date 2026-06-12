@@ -5,7 +5,7 @@ const INIT = { name: '', email: '', subject: '', message: '' };
 
 export default function Contact() {
   const [form, setForm] = useState(INIT);
-  const [status, setStatus] = useState(null); // null | 'loading' | 'success' | 'error'
+  const [status, setStatus] = useState(null);
   const [errMsg, setErrMsg] = useState('');
 
   const [labelRef, labelVis] = useFadeIn();
@@ -41,30 +41,33 @@ export default function Contact() {
 
   return (
     <section id="contact">
-      <div ref={labelRef} className={`section - label fade - in${labelVis ? ' vis' : ''} `}>// 04 — REACH OUT</div>
-      <div ref={titleRef} className={`section - title fade - in${titleVis ? ' vis' : ''} `}>CONTACT</div>
-      <div ref={lineRef} className={`section - line${lineVis ? ' run' : ''} `} />
+      <div ref={labelRef} className={`section-label fade-in${labelVis ? ' vis' : ''}`}>// 04 — REACH OUT</div>
+      <div ref={titleRef} className={`section-title fade-in${titleVis ? ' vis' : ''}`}>CONTACT</div>
+      <div ref={lineRef} className={`section-line${lineVis ? ' run' : ''}`} />
 
       <div className="contact-inner">
-        <div ref={leftRef} className={`fade - left${leftVis ? ' vis' : ''} `}>
+        <div ref={leftRef} className={`fade-left${leftVis ? ' vis' : ''}`}>
           <div className="contact-text">
             <p>Always open to interesting projects, collaborations, internship opportunities, or just a good tech conversation.</p>
             <p style={{ color: 'var(--green-dim)' }}>Based in Ahmedabad, India. Open to remote work worldwide.</p>
           </div>
           <div className="contact-links">
-            <a href="mailto:hardevchudasama@example.com" className="contact-link">
-              <div className="cl-icon">@</div>hardevchudasama@example.com
+            <a href="mailto:hchudasama2605@gmail.com" className="contact-link">
+              <div className="cl-icon">@</div>hchudasama2605@gmail.com
             </a>
-            <a href="https://linkedin.com/in/hardevchudasama" target="_blank" rel="noreferrer" className="contact-link">
-              <div className="cl-icon">in</div>linkedin.com/in/hardevchudasama
+            <a href="https://www.linkedin.com/in/hardev-chudasama-/" target="_blank" rel="noreferrer" className="contact-link">
+              <div className="cl-icon">in</div>linkedin.com/in/hardev-chudasama
             </a>
-            <a href="https://github.com/hardevchudasama" target="_blank" rel="noreferrer" className="contact-link">
-              <div className="cl-icon">{'{}'}</div>github.com/hardevchudasama
+            <a href="https://x.com/HhrdevX" target="_blank" rel="noreferrer" className="contact-link">
+              <div className="cl-icon">𝕏</div>x.com/HhrdevX
+            </a>
+            <a href="https://github.com/HhardeX" target="_blank" rel="noreferrer" className="contact-link">
+              <div className="cl-icon">{'{}'}</div>github.com/HhardeX
             </a>
           </div>
         </div>
 
-        <div ref={rightRef} className={`contact - form fade - right${rightVis ? ' vis' : ''} `}>
+        <div ref={rightRef} className={`contact-form fade-right${rightVis ? ' vis' : ''}`}>
           <div className="form-row">
             <div className="form-field">
               <label>Name</label>
