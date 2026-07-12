@@ -4,8 +4,9 @@ import Particles from './components/Particles';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
-import Projects from './components/Projects';
 import Skills from './components/Skills';
+import Projects from './components/Projects';
+import Certifications from './components/Certifications';
 import Contact from './components/Contact';
 import { useScrollProgress } from './hooks/useScroll';
 
@@ -26,7 +27,6 @@ function BackToTop() {
 }
 
 export default function App() {
-  // Konami code easter egg
   useEffect(() => {
     let k = '';
     const code = 'ArrowUpArrowUpArrowDownArrowDownArrowLeftArrowRightArrowLeftArrowRight';
@@ -56,9 +56,11 @@ export default function App() {
         <hr className="section-divider" />
         <About />
         <hr className="section-divider" />
+        <Skills />
+        <hr className="section-divider" />
         <Projects />
         <hr className="section-divider" />
-        <Skills />
+        <Certifications />
         <hr className="section-divider" />
         <Contact />
       </main>

@@ -3,34 +3,28 @@ import { useFadeIn } from '../hooks/useScroll';
 
 const PROJECTS = [
   {
-    num: '01', year: '// 2025',
-    name: 'GESTURE & FACE RECOGNITION',
-    desc: 'Real-time gesture and face detection system using Java and OpenCV. Processes webcam input to detect facial features and hand gestures with a focus on accuracy and performance.',
-    tags: ['Java', 'OpenCV', 'Computer Vision'],
+    num: '01',
+    year: '// 2026 — ONGOING',
+    name: 'VENOM',
+    role: 'Product Architect & Backend Developer',
+    desc: 'Designing and developing VENOM v1, a white-box AI Agent Security Assessment Platform. Responsible for product planning, system architecture, backend API design, and technical documentation. Collaborating on AI agent threat modeling, capability discovery, permission analysis, and risk assessment to build a modular platform for evaluating AI agents before deployment.',
+    tags: ['Python', 'FastAPI', 'Git', 'GitHub'],
   },
   {
-    num: '02', year: '// 2025',
-    name: 'ESPORTS ANALYTICS PLATFORM',
-    desc: 'Performance analytics system for esports players. Analyses match statistics and player performance trends using data processing and visualisation techniques.',
-    tags: ['Python', 'Pandas', 'Data Viz', 'Machine Learning'],
+    num: '02',
+    year: '// 2025 — HACKATHON',
+    name: 'DHANJI — PERSONAL FINANCE TRACKER',
+    role: 'Frontend Developer & Presenter',
+    desc: 'Developed during the 48-hour Hack the Future 2025 hackathon at DAIICT, Gandhinagar. Collaborated in a five-member team to build a personal finance tracking application. Contributed to frontend development using HTML, CSS, and JavaScript with AI-assisted development tools and designed the final project presentation.',
+    tags: ['HTML5', 'CSS3', 'JavaScript', 'Git'],
   },
   {
-    num: '03', year: '// 2026 — IN PROGRESS',
-    name: 'AI-POWERED THRIFT STORE',
-    desc: 'Sustainable fashion platform with AI-based styling suggestions and intelligent product filtering. Designed to scale into a full e-commerce brand.',
-    tags: ['React', 'Node.js', 'MongoDB', 'AI Tools'],
-  },
-  {
-    num: '04', year: '// 2026',
-    name: 'TRADING PREDICTION PROTOTYPE',
-    desc: 'Experimental stock prediction model using historical data and ML algorithms to test and evaluate predictive trading strategies.',
-    tags: ['Python', 'Scikit-learn', 'Pandas'],
-  },
-  {
-    num: '05', year: '// 2026 — ONGOING',
-    name: 'WEB3 / SOLANA DAPPS',
-    desc: 'Building and experimenting with decentralised applications on the Solana blockchain. Learning smart contract development in Rust and wallet integration.',
-    tags: ['Solana', 'Rust', 'Web3.js', 'JavaScript'],
+    num: '03',
+    year: '// 2025',
+    name: 'DIABETES PREDICTION SYSTEM',
+    role: 'Developer',
+    desc: 'Developed a machine learning application during a Python training program to predict diabetes using patient health records. Worked on data preprocessing, model training, and evaluation using Python.',
+    tags: ['Python', 'Machine Learning'],
   },
 ];
 
@@ -54,6 +48,11 @@ function ProjectCard({ project, delay }) {
       <div className="project-num">{project.num}</div>
       <div className="project-year">{project.year}</div>
       <div className="project-name">{project.name}</div>
+      {project.role && (
+        <div style={{ fontSize: '.68rem', color: 'var(--amber)', letterSpacing: '.08em', marginBottom: '.6rem' }}>
+          ↳ {project.role}
+        </div>
+      )}
       <p className="project-desc">{project.desc}</p>
       <div className="project-tags">
         {project.tags.map(t => <span key={t} className="ptag">{t}</span>)}
@@ -69,7 +68,7 @@ export default function Projects() {
 
   return (
     <section id="projects">
-      <div ref={labelRef} className={`section-label fade-in${labelVis ? ' vis' : ''}`}>// 02 — WHAT I'VE BUILT</div>
+      <div ref={labelRef} className={`section-label fade-in${labelVis ? ' vis' : ''}`}>// 03 — WHAT I'VE BUILT</div>
       <div ref={titleRef} className={`section-title fade-in${titleVis ? ' vis' : ''}`}>PROJECTS</div>
       <div ref={lineRef} className={`section-line${lineVis ? ' run' : ''}`} />
       <div className="projects-grid">

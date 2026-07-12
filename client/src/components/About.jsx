@@ -2,9 +2,9 @@ import { useEffect, useRef, useState } from 'react';
 import { useFadeIn } from '../hooks/useScroll';
 
 const STATS = [
-  { count: 5, label: 'Projects Built' },
-  { count: 15, label: 'Technologies' },
-  { count: 3, label: 'Years Coding' },
+  { count: 3, label: 'Projects Built' },
+  { count: 2, label: 'Hackathons' },
+  { count: 2, label: 'Years Coding' },
   { count: null, label: 'Things to Learn' },
 ];
 
@@ -30,9 +30,9 @@ function StatCard({ count, label, delay }) {
 }
 
 const TERMINAL_LINES = [
-  { id: 'tl1', txt: 'hardev@ahmedabad ~ CSE Student', delay: 500 },
-  { id: 'tl2', txt: 'AI, Web3, DevOps, Open Source, Esports', delay: 1200 },
-  { id: 'tl3', txt: 'Available for internships & collabs', delay: 2100, green: true },
+  { id: 'tl1', txt: 'hardev@ahmedabad ~ CSE Undergrad', delay: 500 },
+  { id: 'tl2', txt: 'Backend Dev, AI, Cybersecurity', delay: 1200 },
+  { id: 'tl3', txt: 'Open to learning & collaborations', delay: 2100, green: true },
 ];
 
 function TerminalBlock({ run }) {
@@ -86,9 +86,9 @@ export default function About() {
 
       <div className="about-grid">
         <div ref={leftRef} className={`about-text fade-left${leftVis ? ' vis' : ''}`}>
-          <p>Hi — I'm <strong>Hardev</strong>, a CSE student based in <strong>Ahmedabad, India</strong>. I have a deep passion for technology that spans multiple domains: from crafting clean, performant web apps to training ML models and experimenting with decentralised blockchains.</p>
-          <p>I believe in <strong>building to learn</strong>. Every project pushes me into unfamiliar territory — whether that's Rust for Solana smart contracts, OpenCV for computer vision, or Scikit-learn for predictive modelling.</p>
-          <p>Long-term goal: found or contribute to a tech product that meaningfully combines <strong>AI + Web3 + Cloud</strong> — built to scale and designed to last.</p>
+          <p>I believe in <strong>learning by building</strong>. Every project helps me strengthen my understanding of software engineering, problem solving, and modern technologies.</p>
+          <p>My focus is on <strong>Python</strong>, <strong>backend development</strong>, <strong>AI</strong>, and <strong>cybersecurity</strong>. I enjoy collaborating on projects that solve real-world problems and continuously improving my technical skills.</p>
+          <p>Currently studying at <strong>Indus Institute of Technology & Engineering</strong>, Ahmedabad — graduating 2027.</p>
           <TerminalBlock run={twRun} />
         </div>
 
@@ -100,8 +100,8 @@ export default function About() {
                   <div className="screen-scanlines" />
                   <div className="screen-text">
                     HARDEV-OS v1.0<br />AHMEDABAD, INDIA<br />─────────────────<br />
-                    [ CORE SYSTEMS  ]<br />▶ WEBDEV ....... OK<br />▶ AI/ML ........ OK<br />
-                    ▶ WEB3 .. LOADING<br />▶ DEVOPS . LOADING<br />─────────────────<br />
+                    [ CORE SYSTEMS  ]<br />▶ PYTHON ....... OK<br />▶ AI/ML ........ OK<br />
+                    ▶ BACKEND .. ACTIVE<br />▶ CYBERSEC .. LEARNING<br />─────────────────<br />
                     READY.<span className="c-blink" />
                   </div>
                 </div>
@@ -109,9 +109,7 @@ export default function About() {
             </div>
             <div className="computer-base"><div className="drive-slot" /></div>
             <div className="computer-keyboard">
-              {[
-                [13, false], [11, false], [10, false], [3, true]
-              ].map((_, rowIdx) => (
+              {[0, 1, 2, 3].map((rowIdx) => (
                 <div key={rowIdx} className="keyboard-row">
                   {rowIdx === 3 ? (
                     <><div className="key key-wide" /><div className="key key-space" /><div className="key key-wide" /></>

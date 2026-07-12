@@ -1,22 +1,40 @@
 import { useFadeIn } from '../hooks/useScroll';
 
 const SKILL_GROUPS = [
-  { title: 'Languages', items: [['Java'], ['Python'], ['JavaScript'], ['TypeScript'], ['C++'], ['Rust', true]] },
-  { title: 'Web Development', items: [['React.js'], ['Node.js'], ['Express.js'], ['HTML5'], ['CSS3'], ['MongoDB']] },
-  { title: 'AI & Data Science', items: [['Pandas'], ['NumPy'], ['Scikit-learn'], ['Matplotlib'], ['Seaborn'], ['ML Basics']] },
-  { title: 'Web3 / Blockchain', items: [['Solana'], ['Web3.js'], ['Smart Contracts', true], ['Wallet Integration', true]] },
-  { title: 'DevOps (Learning)', items: [['Docker', true], ['GitHub Actions', true], ['CI/CD', true], ['Linux'], ['Cloud Deploy', true]] },
-  { title: 'Tools', items: [['Git & GitHub'], ['VS Code'], ['IntelliJ IDEA'], ['Jupyter'], ['Postman']] },
+  {
+    title: 'Programming Languages',
+    items: [['Python'], ['Java'], ['C++'], ['SQL (Basic)']],
+  },
+  {
+    title: 'Web Technologies',
+    items: [['HTML5'], ['CSS3'], ['JavaScript']],
+  },
+  {
+    title: 'Core Computer Science',
+    items: [['Object-Oriented Programming'], ['Data Structures'], ['DBMS']],
+  },
+  {
+    title: 'Developer Tools',
+    items: [['Git'], ['GitHub'], ['VS Code'], ['Postman']],
+  },
+  {
+    title: 'Operating Systems',
+    items: [['Windows'], ['Linux']],
+  },
+  {
+    title: 'Areas of Interest',
+    items: [['Backend Development'], ['Artificial Intelligence'], ['Cybersecurity']],
+  },
 ];
 
 const SKILL_BARS = [
-  { label: 'JavaScript / TypeScript', pct: 85 },
-  { label: 'Python', pct: 80 },
-  { label: 'React.js / Node.js', pct: 78 },
-  { label: 'Java', pct: 75 },
-  { label: 'Machine Learning', pct: 60 },
-  { label: 'Web3 / Solana', pct: 35 },
-  { label: 'DevOps / Docker', pct: 30 },
+  { label: 'Python', pct: 75 },
+  { label: 'Java', pct: 70 },
+  { label: 'C++', pct: 60 },
+  { label: 'HTML5 / CSS3 / JavaScript', pct: 65 },
+  { label: 'Backend Development', pct: 55 },
+  { label: 'Artificial Intelligence', pct: 50 },
+  { label: 'Cybersecurity', pct: 40 },
 ];
 
 function SkillBar({ label, pct, delay }) {
@@ -35,37 +53,6 @@ function SkillBar({ label, pct, delay }) {
   );
 }
 
-export default function Skills() {
-  const [labelRef, labelVis] = useFadeIn();
-  const [titleRef, titleVis] = useFadeIn();
-  const [lineRef, lineVis] = useFadeIn();
-
-  return (
-    <section id="skills">
-      <div ref={labelRef} className={`section-label fade-in${labelVis ? ' vis' : ''}`}>// 03 — WHAT I KNOW</div>
-      <div ref={titleRef} className={`section-title fade-in${titleVis ? ' vis' : ''}`}>SKILLS</div>
-      <div ref={lineRef} className={`section-line${lineVis ? ' run' : ''}`} />
-
-      <div className="skills-grid">
-        {SKILL_GROUPS.map((g, i) => {
-          const [ref, vis] = [null, true]; // inline fade handled below
-          return (
-            <SkillGroup key={g.title} group={g} delay={0.05 * (i + 1)} />
-          );
-        })}
-      </div>
-
-      <div className="skill-bars">
-        <div className="sb-label">// CORE PROFICIENCY</div>
-        {SKILL_BARS.map((b, i) => (
-          <SkillBar key={b.label} label={b.label} pct={b.pct} delay={i * 0.1} />
-        ))}
-      </div>
-      <p style={{ marginTop: '1.5rem', fontSize: '.65rem', color: '#444', letterSpacing: '.1em' }}>~ = currently learning</p>
-    </section>
-  );
-}
-
 function SkillGroup({ group, delay }) {
   const [ref, vis] = useFadeIn();
   return (
@@ -77,5 +64,32 @@ function SkillGroup({ group, delay }) {
         ))}
       </div>
     </div>
+  );
+}
+
+export default function Skills() {
+  const [labelRef, labelVis] = useFadeIn();
+  const [titleRef, titleVis] = useFadeIn();
+  const [lineRef, lineVis] = useFadeIn();
+
+  return (
+    <section id="skills">
+      <div ref={labelRef} className={`section-label fade-in${labelVis ? ' vis' : ''}`}>// 02 — WHAT I KNOW</div>
+      <div ref={titleRef} className={`section-title fade-in${titleVis ? ' vis' : ''}`}>SKILLS</div>
+      <div ref={lineRef} className={`section-line${lineVis ? ' run' : ''}`} />
+
+      <div className="skills-grid">
+        {SKILL_GROUPS.map((g, i) => (
+          <SkillGroup key={g.title} group={g} delay={0.05 * (i + 1)} />
+        ))}
+      </div>
+
+      <div className="skill-bars">
+        <div className="sb-label">// CORE PROFICIENCY</div>
+        {SKILL_BARS.map((b, i) => (
+          <SkillBar key={b.label} label={b.label} pct={b.pct} delay={i * 0.1} />
+        ))}
+      </div>
+    </section>
   );
 }

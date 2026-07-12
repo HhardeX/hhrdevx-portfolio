@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-const TAGS = ['React.js', 'Node.js', 'Python', 'Machine Learning', 'Solana', 'Docker', 'Java', 'TypeScript'];
+const TAGS = ['Python', 'Java', 'C++', 'HTML5', 'CSS3', 'JavaScript', 'Git', 'Linux'];
 
 export default function Hero() {
   const [typed, setTyped] = useState('');
@@ -25,16 +25,17 @@ export default function Hero() {
           <div className="glitch" data-text="CHUDASAMA">CHUDASAMA</div>
         </div>
         <div className="hero-role">
-          Full Stack Developer &nbsp;/&nbsp; AI & Data Science &nbsp;/&nbsp; Web3 Learner &nbsp;/&nbsp; DevOps Explorer
+          Python Developer &nbsp;/&nbsp; Computer Science Undergraduate
         </div>
         <div className="hero-tags">
           {TAGS.map(t => <span key={t} className="tag">{t}</span>)}
         </div>
         <p className="hero-bio">
-          Computer Science Engineering student passionate about building scalable web apps,
-          AI-driven systems, and decentralised technologies. Currently expanding into{' '}
-          <strong>Web3 on Solana</strong> and <strong className="a">DevOps practices</strong>.
-          Goal: impactful tech products combining AI, Web3, and modern cloud systems.
+          I'm a Computer Science undergraduate at <strong>Indus Institute of Technology & Engineering</strong> with
+          a strong interest in <strong>backend development</strong>, <strong>artificial intelligence</strong>, and{' '}
+          <strong className="a">cybersecurity</strong>. I enjoy building practical software solutions through
+          academic projects, hackathons, and continuous learning. Currently working as{' '}
+          <strong>Product Architect & Backend Developer</strong> for VENOM, an AI Agent Security Assessment Platform.
         </p>
         <div className="hero-cta">
           <a href="#projects" className="btn">View Projects</a>

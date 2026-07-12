@@ -1,10 +1,19 @@
 import { useScrollProgress, useActiveSection } from '../hooks/useScroll';
 
-const NAV_IDS = ['home', 'about', 'projects', 'skills', 'contact'];
+const NAV_IDS = ['home', 'about', 'skills', 'projects', 'certifications', 'contact'];
 
 export default function Navbar() {
   const { scrolled } = useScrollProgress();
   const active = useActiveSection(NAV_IDS);
+
+  const NAV_LABELS = {
+    home: 'Home',
+    about: 'About',
+    skills: 'Skills',
+    projects: 'Projects',
+    certifications: 'Certifications',
+    contact: 'Contact',
+  };
 
   return (
     <nav id="nav" className={scrolled ? 'scrolled' : ''}>
@@ -13,7 +22,7 @@ export default function Navbar() {
         {NAV_IDS.map(id => (
           <li key={id}>
             <a href={`#${id}`} className={active === id ? 'active' : ''}>
-              {id.charAt(0).toUpperCase() + id.slice(1)}
+              {NAV_LABELS[id]}
             </a>
           </li>
         ))}
